@@ -1,0 +1,37 @@
+﻿@model List<ClassLibrary_Recruitment.proc_display_available_employees_Result>
+
+@{
+    ViewBag.Title = "Allotment";
+}
+
+<h2>Allotment</h2>
+<script>
+    <h1>p_bid</h1>
+</script>
+<form>
+    <h2>Employee details</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Emp Id</th>
+            <th>Emp Name</th>
+            <th>Buiseness Line</th>
+            <th>Designation</th>
+            <th>Status</th>
+            <th>JobExperience</th>
+
+            
+            @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>@item.EmpId</td>
+                        <td>@item.EmpName</td>
+                        <td>@item.BId</td>
+                        <td>@item.Designation</td>
+                        <td>@item.Status</td>
+                        <td>@item.JobExperience</td>
+                        <td>@Html.ActionLink("Assign", "AssignEmployee", null, new { @class = "btn btn-primary btn-large", onclick="return alert('Alloted!')", p_rid=item., p_bid=item.,p_eid=item.EmpId,p_type=item.Designation} )</td>
+                    </tr>
+            }
+    </table>
+</form>
+

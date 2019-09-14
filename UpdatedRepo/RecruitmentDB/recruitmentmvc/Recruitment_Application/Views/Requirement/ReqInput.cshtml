@@ -1,0 +1,31 @@
+﻿ @{
+     ViewBag.Title = "ReqInput";
+}
+
+<link rel="stylesheet" href="~/Content/BUReqPage.css" />
+
+
+
+    @*<link rel="stylesheet" href="~/Content/slideshow.css" />*@
+    <form method="post">
+        <div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <label id="l1">Buiseness Unit</label>
+            <br />
+            <label>Java Developers</label>
+            <input type="number" min=0 placeholder="Requirements" class="form-control"  name="p_javareq"/><br />
+            <label>.Net Developers</label>
+            <input type="number" min=0 placeholder="Requirements" class="form-control" name="p_dotnetreq"/><br />
+            <label>Buiseness Analyst</label>
+            <input type="number" min=0 placeholder="Requirements" class="form-control" name="p_breq"/><br />
+
+            <br />
+            <button type="submit" class="btn btn-primary">Request</button>
+
+        </div>
+    </form>

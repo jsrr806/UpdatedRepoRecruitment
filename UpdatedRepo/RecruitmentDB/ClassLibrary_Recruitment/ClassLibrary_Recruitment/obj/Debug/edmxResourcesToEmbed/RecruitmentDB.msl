@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RecruitmentDBModelStoreContainer" CdmEntityContainer="RecruitmentDBEntities">
+    <EntitySetMapping Name="BusinessUnitReqTables">
+      <EntityTypeMapping TypeName="RecruitmentDBModel.BusinessUnitReqTable">
+        <MappingFragment StoreEntitySet="BusinessUnitReqTable">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="JavaDevReq" ColumnName="JavaDevReq" />
+          <ScalarProperty Name="DotNetDevReq" ColumnName="DotNetDevReq" />
+          <ScalarProperty Name="BAReq" ColumnName="BAReq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessUnitTables">
+      <EntityTypeMapping TypeName="RecruitmentDBModel.BusinessUnitTable">
+        <MappingFragment StoreEntitySet="BusinessUnitTable">
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="BName" ColumnName="BName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeDetails">
+      <EntityTypeMapping TypeName="RecruitmentDBModel.EmployeeDetail">
+        <MappingFragment StoreEntitySet="EmployeeDetails">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="JobExperience" ColumnName="JobExperience" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_add_bunit" FunctionName="RecruitmentDBModel.Store.proc_add_bunit" />
+    <FunctionImportMapping FunctionImportName="proc_add_employee" FunctionName="RecruitmentDBModel.Store.proc_add_employee" />
+    <FunctionImportMapping FunctionImportName="proc_delete_BReqTable" FunctionName="RecruitmentDBModel.Store.proc_delete_BReqTable" />
+    <FunctionImportMapping FunctionImportName="proc_display_businessreq" FunctionName="RecruitmentDBModel.Store.proc_display_businessreq">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RecruitmentDBModel.proc_display_businessreq_Result">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="JavaDevReq" ColumnName="JavaDevReq" />
+          <ScalarProperty Name="DotNetDevReq" ColumnName="DotNetDevReq" />
+          <ScalarProperty Name="BAReq" ColumnName="BAReq" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_display_emp_table" FunctionName="RecruitmentDBModel.Store.proc_display_emp_table">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RecruitmentDBModel.proc_display_emp_table_Result">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="JobExperience" ColumnName="JobExperience" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_insert_req" FunctionName="RecruitmentDBModel.Store.proc_insert_req" />
+    <FunctionImportMapping FunctionImportName="proc_update_tables" FunctionName="RecruitmentDBModel.Store.proc_update_tables" />
+    <EntitySetMapping Name="LoginCredentials">
+      <EntityTypeMapping TypeName="RecruitmentDBModel.LoginCredential">
+        <MappingFragment StoreEntitySet="LoginCredentials">
+          <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="proc_login_signin" FunctionName="RecruitmentDBModel.Store.proc_login_signin" />
+    <FunctionImportMapping FunctionImportName="proc_login_signup" FunctionName="RecruitmentDBModel.Store.proc_login_signup" />
+    <FunctionImportMapping FunctionImportName="proc_display_requrests" FunctionName="RecruitmentDBModel.Store.proc_display_requrests">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RecruitmentDBModel.proc_display_requrests_Result">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="JavaDevReq" ColumnName="JavaDevReq" />
+          <ScalarProperty Name="DotNetDevReq" ColumnName="DotNetDevReq" />
+          <ScalarProperty Name="BAReq" ColumnName="BAReq" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_display_available_employees" FunctionName="RecruitmentDBModel.Store.proc_display_available_employees">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RecruitmentDBModel.proc_display_available_employees_Result">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="JobExperience" ColumnName="JobExperience" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="proc_display_pending_requests" FunctionName="RecruitmentDBModel.Store.proc_display_pending_requests">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RecruitmentDBModel.proc_display_pending_requests_Result">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="BId" ColumnName="BId" />
+          <ScalarProperty Name="JavaDevReq" ColumnName="JavaDevReq" />
+          <ScalarProperty Name="DotNetDevReq" ColumnName="DotNetDevReq" />
+          <ScalarProperty Name="BAReq" ColumnName="BAReq" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
