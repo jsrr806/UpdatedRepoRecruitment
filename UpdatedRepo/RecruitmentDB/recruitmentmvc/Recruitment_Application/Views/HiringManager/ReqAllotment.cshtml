@@ -4,8 +4,6 @@
 }
 
 <h2>HireManager</h2>
-
-<form>
     <div>
         <br />
         <br />
@@ -18,17 +16,23 @@
                 <th>Required Business Analyst</th>
             </tr>
 
-             @foreach (var item in Model)
-             {
-                 <tr>
-                        <td>@item.RequestId</td>
-                        <td>@item.BId</td>
-                        <td>@item.JavaDevReq</td>
-                        <td>@item.DotNetDevReq</td>
-                        <td>@item.BAReq</td>
-                        <td>@Html.ActionLink("Allot", "Allotment", null, new { @class = "btn btn-primary btn-large", p_bid = item.BId, p_rid=item.RequestId })</td>
-                 </tr>
-             }
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.RequestId</td>
+                <td>@item.BId</td>
+                <td>@item.JavaDevReq</td>
+                <td>@item.DotNetDevReq</td>
+                <td>@item.BAReq</td>
+
+                @*<td><input type="hidden" name="p_rid" value="@item.RequestId" /></td>
+                <td><input type="hidden" name="p_bid" value="@item.BId" /></td>
+                <td><button class="btn btn-success" type="submit">Allot</button></td>*@
+
+                 <td> @Html.ActionLink("Allot", "NReqAllotment", new {@class = "btn btn-primary btn-large", p_bid = item.BId, p_rid = item.RequestId }) </td>
+                 @*<td>@Html.ActionLink("Allot", "ReqAllotment", null, new { @class = "btn btn-primary btn-large", p_bid = item.BId, p_rid = item.RequestId })</td>*@
+            </tr>
+            }
         </table>
     </div>
-</form>
+@**@ 

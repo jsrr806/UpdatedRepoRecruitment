@@ -5,10 +5,6 @@
 }
 
 <h2>Allotment</h2>
-<script>
-    <h1>p_bid</h1>
-</script>
-<form>
     <h2>Employee details</h2>
     <table class="table table-striped">
         <tr>
@@ -19,19 +15,18 @@
             <th>Status</th>
             <th>JobExperience</th>
 
-            
+
             @foreach (var item in Model)
             {
-                    <tr>
-                        <td>@item.EmpId</td>
-                        <td>@item.EmpName</td>
-                        <td>@item.BId</td>
-                        <td>@item.Designation</td>
-                        <td>@item.Status</td>
-                        <td>@item.JobExperience</td>
-                        <td>@Html.ActionLink("Assign", "AssignEmployee", null, new { @class = "btn btn-primary btn-large", onclick="return alert('Alloted!')", p_rid=item., p_bid=item.,p_eid=item.EmpId,p_type=item.Designation} )</td>
-                    </tr>
+            <tr>
+                <td>@item.EmpId</td>
+                <td>@item.EmpName</td>
+                <td>@item.BId</td>
+                <td>@item.Designation</td>
+                <td>@item.Status</td>
+                <td>@item.JobExperience</td>
+                <td><button onclick="location.href = '@Url.Action("NAllotment","HiringManager", new {p_eid = item.EmpId, p_type = item.Designation })'; return false;">Assign</button></td>
+                <td>@Html.ActionLink("Assign", "NAllotment", new { @class = "btn btn-primary btn-large", onclick = "return alert('Alloted!')", p_eid = item.EmpId, p_type = item.Designation })
+            </tr>
             }
-    </table>
-</form>
-
+        </table>
